@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+@import '/css/reusable-components.css';
+@import '/stars.css';
+
+
+
+
+
+
+
+
+::root{
+    --color-text: #f3f3f9;
+    
+    --color-background: #1c1c24;
+    --color-primary: #405173;
+    --color-secondary: #1A1E26;
+    --color-tertiary: #0477BF;
+    --color-quaternary: #03A6A6;
+    --color-quinary: #431F45;
+    --color-card: rgba(64, 81, 115, 0.5);
+    --color-background-main: #1A1B1D;
+    --info-size: 35vh;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #f3f3f9;
+    
+}
+
+html{
+    scroll-behavior: smooth;
+    scroll-timeline: --page-scroll block;
+}
+
+body{
+  
+    color: var(--color-text);
+    background-image: url('/img/astronaut.jpg');
+    background-repeat: no-repeat;
+    background-size: cover; 
+    background-position: center;
+    background-attachment: fixed;
+    font-family: 'Space Grotesk', sans-serif;
+    
+} 
+
+
+/*  HEADER */
+
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100%;
+}
+
+
+header .container h1{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 8rem;
+    color: transparent;
+
+    background-image: url('/img/Bg-space.jpg');
+
+    background-repeat: repeat;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #f3f3f9;
+    -webkit-background-clip: text;
+
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+    
+    animation: move 20s ease-in-out infinite;
+    
+}
+
+header .container p{
+    font-size: 1.3rem;
+    text-align: justify;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+@keyframes move {
+    0%, 100% {
+      background-position: left top;
+    }
+    25%{
+      background-position: right bottom;
+     }
+    50% {
+      background-position: left bottom;
+    }
+    75% {
+      background-position: right top;
+    }   
+}
+
+/* navbar */
+
+
+
+/* CARD HEADER */
+
+
+header .container1{
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+header .container1 .card{
+    height: 500px;
+    width: 800px;
+
+    border: 3px solid var(--color-text);
+    border-radius: 10px;
+    background: var(--color-card);
+
+    display: grid;
+    grid-template-areas: 'img' 'description';
+    grid-template-rows: 300px[img] 200px[description];
+
+    
+
+
+
+}
+
+header .container1 .card .img{
+    grid-area: img;
+    height: 100%;
+    width: 100%;
+
+    background-image: url('/img/planetsCards/Earth.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    border-radius: 10px 10px 0 0;
+
+}
+
+header .container1 .card .description{
+    grid-area: description;
+    height: 100%;
+    width: 100%;
+
+}
+
+header .container1 .card .description h1{
+    font-size: 2.3rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+header .container1 .card .description p{
+    font-size: 1.14rem;
+    text-align: justify;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+/* ============= progress rocket =====================*/
+
+
+
+/* ABOUT */
+
+
+main{ 
+
+    background: var(--color-background-main);
+    height: 100vh;
+    width: 100%;
+}
+
+
+main .container-about{
+    height: 100vh;
+    width: 800px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 40px 0;
+    text-align: justify;
+    line-height: 2rem;
+}
+
+
+
+main .container-about  h1{
+    font-size: 4rem;
+    color: transparent;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #f3f3f9;
+    -webkit-background-clip:text;
+    background-image: url('/img/Bg-space.jpg');
+    background-repeat: repeat;
+    background-size: 200% 200%;
+    animation: move 20s ease-in-out infinite;
+
+    
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+}
+
+@keyframes appear {
+    from{
+        opacity: 0;
+        translate: -100vw 0;
+    }
+
+    to{
+        opacity: 1;
+        translate: 0 0;
+    }
+    
+}
+
+
+
+main .container-about .about p{
+    font-size: 1.14rem;
+    text-align: justify;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+
+    margin:0 10rem;
+    
+}
+
+
+main .container-about .about h1, .about p{
+    
+    animation: appear 1ms ease-in-out;
+    animation-timeline: view();
+    animation-range: cover 0% cover 40%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

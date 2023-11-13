@@ -1,0 +1,326 @@
+@import 'stars.css';
+
+
+
+
+
+
+
+
+
+:root{
+    --color-text: #f3f3f9;
+    
+    --color-background: #1c1c24;
+    --color-primary: #405173;
+    --color-secondary: #1A1E26;
+    --color-tertiary: #0477BF;
+    --color-quaternary: #03A6A6;
+    --color-quinary: #431F45;
+    --color-card: rgba(64, 81, 115, 0.5);
+    --color-background-main: #1A1B1D;
+    --info-size: 35vh;
+}
+
+
+
+body{
+    display: grid;
+    place-items: center;
+}
+
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+header .navbar{
+    position: fixed;
+    background: #000000;
+    top: 0;
+    left: 0;
+
+    height: 100px;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+header .navbar .logo{
+    font-size: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+
+
+header .navbar .menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header .navbar .menu ul li a{
+    margin: 10px;
+    color: var(--color-text);
+    transition: all .3s ease-in-out;
+    text-transform: uppercase;
+}
+
+header .navbar .menu ul li a:hover{
+    color: var(--color-tertiary);
+}
+
+
+header .navbar .menu ul li:last-child{
+    display: none;
+}
+
+
+
+@keyframes grow-progress {
+    from{ transform: scaleX(0);}
+    to{ transform: scaleX(1) ;}
+    
+}
+
+
+header #progress, #progress i{
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 10px;
+    background: #431F45;
+
+    -webkit-background-clip: content-box;
+
+    transform-origin: 0 50%;
+    animation: grow-progress auto linear;
+    animation-timeline: --page-scroll;
+
+}
+
+
+
+header #login .btn{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: .3s;
+    background: var(--color-primary);
+
+}
+
+header #login .btn .sign{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+header #login .btn .sign svg{
+    width: 17px;
+}
+
+header #login .btn .sign svg path{
+    fill: var(--color-text);
+}
+
+header #login .btn .text{
+    position: absolute;
+    right: 0;
+    width: 0;
+    opacity: 0;
+    width: 0%;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 500;
+    transition-duration: .3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header #login .btn:hover{
+    width: 125px;
+    border-radius: 40px ;
+    transition-duration: .3s;
+
+}
+
+header #login .btn:hover .sign{
+    width:30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+
+header #login .btn:hover .text{
+    width: 70%;
+    opacity: 1;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+
+header #login .btn:active{
+    transform: translate(2px, 2px);
+}
+
+
+
+/* ======================= FOOTER ================================= */
+
+
+footer{
+    width: 100%;
+    background: var(--color-secondary);
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+footer .socials{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .socials ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+
+}
+
+footer .socials ul li{
+    margin: 10px;
+}
+
+footer .socials ul li a{
+    text-decoration: none;
+    color: var(--color-text);
+    font-size: 1.5rem;
+    transition: all .3s ease-in-out;
+}
+
+footer .socials ul li:nth-child(1) a:hover{
+    color: #1DA1F2;
+}
+
+
+footer .socials ul li:nth-child(2) a:hover{
+    color: #b8063b;
+}
+
+footer .socials ul li:nth-child(3) a:hover{
+    color: #f00;
+}
+
+footer .socials ul li:nth-child(4) a:hover{
+    color: grey;
+}
+
+footer .socials ul li:nth-child(5) a:hover{
+    color: rgb(59, 124, 255);
+}
+
+/* contact */
+
+footer .contact{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .contact h1{
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+footer .contact p{
+    font-size: 1rem;
+    text-align: justify;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+}
+
+/* infos */
+
+footer .infos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+footer .infos h1{
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+footer .infos p{
+    font-size: 1rem;
+    text-align: center;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: 300;
+
+}
+/*  ================= scrollbar ============================= */
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+
+::-webkit-scrollbar-track {
+  background: #000000; 
+}
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-text); 
+}
+
+/* Handle on hover */
+
+::-webkit-scrollbar-thumb:hover {
+  background: #332a41; 
+}
+
+/*  ================== media queries ======================= */
